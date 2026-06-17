@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+backend/data/uploads/*
+!backend/data/uploads/.gitkeep
+.DS_Store
+node_modules/
+firebase-service-account*.json
+serviceAccountKey.json
+.vercel/

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HirePrep — Land Your First Job with Confidence</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎯</text></svg>"/>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     TOAST CONTAINER
+═══════════════════════════════════════════════════════ -->
+<div id="toast-container"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PUBLIC NAVBAR
+═══════════════════════════════════════════════════════ -->
+<nav class="navbar" id="public-navbar">
+  <div class="navbar-inner">
+    <div class="navbar-logo" id="nav-logo">HirePrep</div>
+    <ul class="navbar-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#home">Features</a></li>
+      <li><a href="#home">How It Works</a></li>
+      <li><a href="#auth">Log in</a></li>
+      <li><a href="#auth" class="btn btn-primary btn-sm">Start free</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav overlay -->
+<div class="mobile-nav" id="mobile-nav">
+  <button class="mobile-nav-close" id="mobile-nav-close">✕</button>
+  <a href="#home"     onclick="document.getElementById('mobile-nav').classList.remove('open')">Home</a>
+  <a href="#auth"     onclick="document.getElementById('mobile-nav').classList.remove('open')">Log in</a>
+  <a href="#auth"     onclick="document.getElementById('mobile-nav').classList.remove('open')">Sign up</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE: HOME
+═══════════════════════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <!-- Left: Text -->
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Free for job seekers
+        </div>
+        <h1 class="hero-headline">Land your first job<br>with confidence.</h1>
+        <p class="hero-subtext">HirePrep is your personal AI coach for interview practice, skill gap analysis, and career readiness. Built for fresh graduates who want real feedback — not generic advice.</p>
+        <div class="hero-ctas">
+          <a href="#auth" class="btn btn-primary btn-lg">Start practicing free</a>
+          <a href="#home" class="btn btn-ghost btn-lg" onclick="document.getElementById('how-section').scrollIntoView({behavior:'smooth'});return false">See how it works</a>
+        </div>
+      </div>
+      <!-- Right: Skill Gap Mockup (pure HTML/CSS) -->
+      <div class="hero-visual">
+        <div class="hero-mockup">
+          <div class="mockup-header">Skill Gap Analysis</div>
+          <div class="mockup-ring-row">
+            <div class="mockup-ring">
+              <svg width="80" height="80" viewBox="0 0 80 80">
+                <circle cx="40" cy="40" r="32" fill="none" stroke="#E7E5E4" stroke-width="8"/>
+                <circle cx="40" cy="40" r="32" fill="none" stroke="#0D9488" stroke-width="8"
+                  stroke-dasharray="142 201" stroke-linecap="round"/>
+              </svg>
+              <div class="mockup-ring-text">73%</div>
+            </div>
+            <div class="mockup-label">
+              <strong>Strong match</strong>
+              Frontend Developer
+            </div>
+          </div>
+          <div class="mockup-section-title">Skills you have</div>
+          <div class="mockup-tags">
+            <span class="tag tag-teal">React</span>
+            <span class="tag tag-teal">CSS</span>
+            <span class="tag tag-teal">Git</span>
+            <span class="tag tag-teal">JS</span>
+          </div>
+          <div class="mockup-section-title">Skills to learn</div>
+          <div class="mockup-tags">
+            <span class="tag tag-red">TypeScript</span>
+            <span class="tag tag-red">Testing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section section" id="how-section">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow">Process</div>
+        <h2 class="section-title">Go from application to offer</h2>
+        <p class="section-subtitle">Four steps that turn uncertainty into a clear plan — then action.</p>
+      </div>
+      <div class="steps-row reveal">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-title">Upload your CV</div>
+          <p class="step-desc">AI reads your PDF and builds your skill profile in seconds.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-title">Paste a job description</div>
+          <p class="step-desc">Find a role you want. Copy the full description into HirePrep.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-title">See your skill gap</div>
+          <p class="step-desc">Get a match score, missing skills, and a week-by-week learning roadmap.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-title">Practice interviews</div>
+          <p class="step-desc">AI generates role-specific questions and scores every answer you give.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES ALTERNATING -->
+  <section class="features-section section">
+    <div class="container">
+      <div class="reveal" style="text-align:center;margin-bottom:16px">
+        <div class="section-eyebrow">Features</div>
+        <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
+      </div>
+
+      <!-- Feature 1: Skill Gap -->
+      <div class="feature-row reveal">
+        <div class="feature-text">
+          <div class="feature-kicker">Flagship Feature</div>
+          <h3 class="feature-title">Know exactly what's missing — before you apply.</h3>
+          <p class="feature-desc">Paste any job description. HirePrep reads your CV and compares them using AI. You get a match percentage, a list of skills you already have, and a skill-by-skill learning plan for what you're missing.</p>
+          <ul class="feature-points">
+            <li>Match percentage shows you where you stand</li>
+            <li>Learning roadmap per missing skill — not generic advice</li>
+            <li>Free resources included for every skill gap</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="mini-card">
+            <div class="mini-card-label">Skill Gap — Data Analyst Role</div>
+            <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
+              <div style="font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:#0D9488">68%</div>
+              <div>
+                <div style="font-size:13px;font-weight:600;color:#1C1917">Partial match</div>
+                <div style="font-size:12px;color:#78716C">3 skills to learn</div>
+              </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <span class="tag tag-teal">Python ✓</span>
+              <span class="tag tag-teal">SQL ✓</span>
+              <span class="tag tag-red">Tableau ✗</span>
+              <span class="tag tag-red">Power BI ✗</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2: Interview Coach -->
+      <div class="feature-row reverse reveal">
+        <div class="feature-text">
+          <div class="feature-kicker">AI Interview Coach</div>
+          <h3 class="feature-title">Real questions. Real feedback. No filler.</h3>
+          <p class="feature-desc">Pick a role and difficulty. Groq AI generates 10 fresh, role-specific interview questions — not from a question bank. Answer each one in your own words. Get a score and specific written feedback for every answer.</p>
+          <ul class="feature-points">
+            <li>Questions generated fresh for each session</li>
+            <li>Each answer scored 1–10 with written feedback</li>
+            <li>Overall performance summary at the end</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="mini-card">
+            <div class="mini-card-label">Frontend Developer · Intermediate</div>
+            <div class="mini-question">Explain how the virtual DOM works and why React uses it.</div>
+            <div class="mini-answer">The virtual DOM is an in-memory representation of the real DOM. React diffs it and only updates changed nodes...</div>
+            <div class="mini-score">
+              <span class="mini-score-num">8.5</span>
+              <span style="font-size:13px;color:#78716C">/ 10 — Great answer. Consider mentioning the reconciliation algorithm.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3: Quizzes -->
+      <div class="feature-row reveal">
+        <div class="feature-text">
+          <div class="feature-kicker">Adaptive Quizzes</div>
+          <h3 class="feature-title">Test your knowledge on any topic, any time.</h3>
+          <p class="feature-desc">Type a topic — JavaScript, System Design, SQL, Machine Learning — and get 10 AI-generated multiple choice questions with instant feedback and explanations after each answer.</p>
+          <ul class="feature-points">
+            <li>AI-generated questions, not a recycled question bank</li>
+            <li>Instant right/wrong feedback with explanations</li>
+            <li>Score breakdown and weak areas identified</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="mini-card">
+            <div class="mini-card-label">JavaScript Quiz</div>
+            <p style="font-size:15px;color:#1C1917;margin-bottom:12px;font-weight:500">What does <code style="background:#F0FDFA;padding:2px 6px;border-radius:4px">Array.prototype.reduce()</code> return?</p>
+            <div class="mini-quiz-option correct">✓ A single accumulated value</div>
+            <div class="mini-quiz-option">A new array of the same length</div>
+            <div style="font-size:12px;color:#065F46;background:#D1FAE5;padding:8px 10px;border-radius:6px;margin-top:8px">
+              💡 reduce() applies a function to each element accumulating a result, returning one final value.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="social-section">
+    <div class="container">
+      <h2 class="social-headline reveal">Join 2,000+ graduates already preparing smarter</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">I went from 0 interview callbacks to 3 offers in 6 weeks. The interview practice made the real thing feel easy.</p>
+          <div class="testimonial-author">Sara K.</div>
+          <div class="testimonial-role">Hired at Careem — Product Associate</div>
+        </div>
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">The skill gap feature showed me exactly what I was missing for a junior dev role. I learned Docker in 2 weeks and got the job.</p>
+          <div class="testimonial-author">Ahmed R.</div>
+          <div class="testimonial-role">Junior Developer, Islamabad</div>
+        </div>
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">Best free tool I've found in my job search. The AI feedback on my interview answers was more useful than anything I read online.</p>
+          <div class="testimonial-author">Fatima N.</div>
+          <div class="testimonial-role">Data Analyst, Lahore</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">HirePrep</div>
+        <div class="footer-tagline">Built for fresh grads. Powered by Groq AI.</div>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#auth">Sign up</a>
+        <a href="#auth">Log in</a>
+      </div>
+    </div>
+  </footer>
+</div><!-- /page-home -->
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE: AUTH
+═══════════════════════════════════════════════════════ -->
+<div class="page" id="page-auth">
+  <div class="auth-container">
+    <div class="auth-grid">
+      <!-- Left panel -->
+      <div class="auth-left">
+        <blockquote class="auth-left-quote">"Your next job starts with your next practice session."</blockquote>
+        <div class="auth-benefit">
+          <div class="auth-benefit-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <p class="auth-benefit-text">AI-generated interview questions tailored to your target role — not a recycled list.</p>
+        </div>
+        <div class="auth-benefit">
+          <div class="auth-benefit-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <p class="auth-benefit-text">Upload your CV once. See exactly how you match every job you apply for.</p>
+        </div>
+        <div class="auth-benefit">
+          <div class="auth-benefit-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <p class="auth-benefit-text">A learning roadmap for every skill gap — with free resources and a concrete task for this week.</p>
+        </div>
+      </div>
+      <!-- Right panel -->
+      <div class="auth-right">
+        <div class="auth-logo">HirePrep</div>
+        <h2 id="auth-title" style="font-family:'Fraunces',serif;font-size:24px;color:var(--ink);margin-bottom:24px;font-weight:600">Welcome back</h2>
+        <div class="auth-tabs">
+          <button class="auth-tab active" type="button">Log in</button>
+          <button class="auth-tab" type="button">Sign up</button>
+          <div class="auth-tab-indicator"></div>
+        </div>
+        <form class="auth-form" id="auth-form">
+          <div class="form-group" id="auth-name-group" style="display:none">
+            <label class="form-label" for="auth-name">Full name</label>
+            <input class="form-input" type="text" id="auth-name" placeholder="Your full name" autocomplete="name"/>
+            <span class="form-error" id="auth-name-error"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="auth-email">Email address</label>
+            <input class="form-input" type="email" id="auth-email" placeholder="you@example.com" autocomplete="email"/>
+            <span class="form-error" id="auth-email-error"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="auth-password">Password</label>
+            <div style="position:relative">
+              <input class="form-input" type="password" id="auth-password" placeholder="At least 6 characters" autocomplete="current-password" style="padding-right:44px"/>
+              <button type="button" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--ink-faint);background:none;border:none;cursor:pointer;font-size:14px" onclick="const p=document.getElementById('auth-password');p.type=p.type==='password'?'text':'password'">👁</button>
+            </div>
+            <span class="form-error" id="auth-password-error"></span>
+          </div>
+          <button class="btn btn-primary" type="submit" id="auth-submit" style="width:100%;justify-content:center;padding:13px">Log in</button>
+        </form>
+        <p class="auth-footer-text">
+          By continuing you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+        </p>
+        <p style="text-align:center;margin-top:16px;font-size:14px;color:var(--ink-faint)">
+          <a href="#home" style="color:var(--teal-primary)">← Back to home</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div><!-- /page-auth -->
+
+<!-- ═══════════════════════════════════════════════════════
+     APP LAYOUT (Dashboard + all app sections)
+═══════════════════════════════════════════════════════ -->
+<div class="app-layout" id="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">HirePrep</div>
+    <nav class="sidebar-nav">
+
+      <div class="nav-item" data-section="dashboard">
+        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Overview
+      </div>
+
+      <div class="nav-item" data-section="interview">
+        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Interview Practice
+      </div>
+
+      <div class="nav-item" data-section="quiz">
+        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+        Quiz
+      </div>
+
+      <div class="nav-item" data-section="analyzer">
+        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
+        Skill Analyzer
+      </div>
+
+      <div class="nav-item" data-section="cv">
+        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        My CV
+      </div>
+
+      <div class="nav-item" data-section="results">
+        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Results
+      </div>
+
+    </nav>
+    <div class="sidebar-user">
+      <div class="sidebar-user-info">
+        <div class="user-avatar">A</div>
+        <div>
+          <div class="user-name sidebar-username">User</div>
+          <div class="user-email sidebar-email"></div>
+        </div>
+      </div>
+      <button class="signout-btn">Sign out</button>
+    </div>
+  </aside>
+
+  <!-- Sidebar overlay for mobile -->
+  <div class="sidebar-overlay"></div>
+  <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle menu">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <div class="content-area">
+
+      <!-- ─────────────────────────────────────────
+           SECTION: OVERVIEW / DASHBOARD
+      ───────────────────────────────────────── -->
+      <section class="app-section active" id="sec-dashboard">
+        <div class="top-bar">
+          <div>
+            <div class="top-greeting">Good morning, <span id="greeting-name">there</span> 👋</div>
+          </div>
+          <div class="top-date" id="top-date"></div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="stat-number" id="stat-interviews">0</div>
+            <div class="stat-label">Interviews Practiced</div>
+            <div class="stat-trend">↑ Keep going!</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+            </div>
+            <div class="stat-number" id="stat-quiz">0</div>
+            <div class="stat-label">Average Quiz Score %</div>
+            <div class="stat-trend">↑ Improving</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            </div>
+            <div class="stat-number" id="stat-match">0</div>
+            <div class="stat-label">Best Skill Match %</div>
+            <div class="stat-trend">↑ Upload CV to start</div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="section-heading">Quick actions</div>
+        <div class="quick-actions">
+          <div class="action-card" onclick="window.location.hash='interview'">
+            <div class="action-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <div>
+              <div class="action-title">Practice Interview</div>
+              <div class="action-desc">Generate AI questions for any job role</div>
+            </div>
+            <div class="action-arrow">→</div>
+          </div>
+          <div class="action-card" onclick="window.location.hash='quiz'">
+            <div class="action-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+            </div>
+            <div>
+              <div class="action-title">Take a Quiz</div>
+              <div class="action-desc">Test your knowledge on any technical topic</div>
+            </div>
+            <div class="action-arrow">→</div>
+          </div>
+          <div class="action-card" onclick="window.location.hash='analyzer'">
+            <div class="action-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
+            </div>
+            <div>
+              <div class="action-title">Analyze Skill Gap</div>
+              <div class="action-desc">Paste a job description, see what you're missing</div>
+            </div>
+            <div class="action-arrow">→</div>
+          </div>
+          <div class="action-card" onclick="window.location.hash='results'">
+            <div class="action-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <div class="action-title">View Results</div>
+              <div class="action-desc">Review your past sessions and progress</div>
+            </div>
+            <div class="action-arrow">→</div>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="section-heading">Recent activity</div>
+        <div class="card">
+          <div class="activity-feed" id="activity-feed">
+            <div class="activity-item">
+              <span class="activity-text" style="color:var(--ink-faint)">No activity yet. Start with an interview or quiz!</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────────────
+           SECTION: INTERVIEW PRACTICE
+      ───────────────────────────────────────── -->
+      <section class="app-section" id="sec-interview">
+
+        <!-- Setup -->
+        <div class="interview-step" id="interview-setup">
+          <div class="page-title">Interview Practice</div>
+          <p class="page-subtitle">Get 10 AI-generated questions for any role. Answer them all, then get scored and coached.</p>
+
+          <div class="card" style="max-width:640px">
+            <div class="form-group" style="margin-bottom:24px">
+              <label class="form-label">What role are you preparing for?</label>
+              <input class="form-input" type="text" id="interview-role" placeholder="e.g. Frontend Developer, Data Analyst, Product Manager"/>
+            </div>
+
+            <div class="form-group" style="margin-bottom:28px">
+              <label class="form-label">Difficulty level</label>
+              <div class="difficulty-pills" style="margin-top:8px">
+                <button class="difficulty-pill" data-difficulty="Beginner">Beginner</button>
+                <button class="difficulty-pill active" data-difficulty="Intermediate">Intermediate</button>
+                <button class="difficulty-pill" data-difficulty="Advanced">Advanced</button>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-lg" id="gen-interview-btn" style="width:100%;justify-content:center">
+              Generate Interview Questions
+            </button>
+          </div>
+        </div>
+
+        <!-- Loading -->
+        <div class="interview-step" id="interview-loading" style="display:none">
+          <div style="text-align:center;padding:80px 20px">
+            <div style="width:48px;height:48px;border:3px solid var(--border);border-top-color:var(--teal-primary);border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 20px"></div>
+            <div style="font-family:'Fraunces',serif;font-size:24px;color:var(--ink);margin-bottom:8px">Generating your questions...</div>
+            <p style="color:var(--ink-muted)">Groq AI is crafting 10 role-specific questions for you.</p>
+          </div>
+        </div>
+
+        <!-- Question Screen -->
+        <div class="interview-step" id="interview-question" style="display:none">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:8px">
+            <span id="q-num" style="font-size:14px;font-weight:500;color:var(--ink-muted)">Question 1 of 10</span>
+            <span class="tag tag-teal" id="q-role-badge"></span>
+          </div>
+          <div class="progress-bar-wrap" style="margin-bottom:28px">
+            <div class="progress-bar-fill" id="interview-progress" style="width:0%"></div>
+          </div>
+          <div class="interview-question-card">
+            <div class="question-badge" id="q-role-badge-2">Interview</div>
+            <div class="question-text" id="q-text">Loading question...</div>
+            <textarea class="answer-textarea" id="answer-textarea" placeholder="Type your answer here. Be as detailed as you can — the AI evaluates both content and depth."></textarea>
+            <div class="word-counter" id="word-count">0 chars</div>
+          </div>
+          <div style="display:flex;justify-content:flex-end;margin-top:16px">
+            <button class="btn btn-primary btn-lg" id="next-q-btn" disabled>Next Question →</button>
+          </div>
+        </div>
+
+        <!-- Submitting -->
+        <div class="interview-step" id="interview-loading-submit" style="display:none">
+          <div style="text-align:center;padding:80px 20px">
+            <div style="width:48px;height:48px;border:3px solid var(--border);border-top-color:var(--teal-primary);border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 20px"></div>
+            <div style="font-family:'Fraunces',serif;font-size:24px;color:var(--ink);margin-bottom:8px">Scoring your answers...</div>
+            <p style="color:var(--ink-muted)">AI is reading all your answers and building feedback. This takes 10–20 seconds.</p>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="interview-step" id="interview-results" style="display:none">
+          <div class="score-ring-center">
+            <div class="score-big" id="result-score">—</div>
+            <div class="score-label">Overall Score</div>
+          </div>
+          <div class="overall-summary" id="result-overall"></div>
+
+          <div class="section-heading" style="margin-bottom:12px">Question-by-question feedback</div>
+          <div class="accordion" id="result-accordion"></div>
+
+          <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap">
+            <button class="btn btn-primary" onclick="resetInterview();showInterviewStep('setup')">Practice Again</button>
+            <button class="btn btn-ghost" onclick="window.location.hash='results'">View Results History</button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ─────────────────────────────────────────
+           SECTION: QUIZ
+      ───────────────────────────────────────── -->
+      <section class="app-section" id="sec-quiz">
+
+        <!-- Setup -->
+        <div class="quiz-step" id="quiz-setup">
+          <div class="page-title">Adaptive Quiz</div>
+          <p class="page-subtitle">Pick any topic. Get AI-generated questions with instant feedback and explanations.</p>
+          <div class="card" style="max-width:560px">
+            <div class="form-group" style="margin-bottom:20px">
+              <label class="form-label">What topic do you want to quiz on?</label>
+              <input class="form-input" type="text" id="quiz-topic" placeholder="e.g. JavaScript, SQL, System Design, Python, Machine Learning"/>
+            </div>
+            <div class="form-group" style="margin-bottom:28px">
+              <label class="form-label">Number of questions</label>
+              <select class="form-select" id="quiz-count">
+                <option value="5">5 questions</option>
+                <option value="10" selected>10 questions</option>
+                <option value="15">15 questions</option>
+              </select>
+            </div>
+            <button class="btn btn-primary btn-lg" id="gen-quiz-btn" style="width:100%;justify-content:center">Generate Quiz</button>
+          </div>
+        </div>
+
+        <!-- Loading -->
+        <div class="quiz-step" id="quiz-loading" style="display:none">
+          <div style="text-align:center;padding:80px 20px">
+            <div style="width:48px;height:48px;border:3px solid var(--border);border-top-color:var(--teal-primary);border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 20px"></div>
+            <div style="font-family:'Fraunces',serif;font-size:24px;color:var(--ink);margin-bottom:8px">Generating quiz...</div>
+            <p style="color:var(--ink-muted)">Building your questions now.</p>
+          </div>
+        </div>
+
+        <!-- Question -->
+        <div class="quiz-step" id="quiz-question" style="display:none">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px">
+            <span id="quiz-q-num" style="font-size:14px;font-weight:500;color:var(--ink-muted)">Question 1 of 10</span>
+            <span class="tag tag-teal" id="quiz-topic-badge"></span>
+          </div>
+          <div class="progress-bar-wrap" style="margin-bottom:16px">
+            <div class="progress-bar-fill" id="quiz-progress" style="width:0%"></div>
+          </div>
+          <div class="quiz-progress-dots" id="quiz-dots"></div>
+
+          <div class="card">
+            <p style="font-size:20px;color:var(--ink);font-weight:500;line-height:1.4;margin-bottom:4px" id="quiz-q-text">Loading...</p>
+            <div class="quiz-options" id="quiz-options"></div>
+            <div class="quiz-explanation" id="quiz-explanation"></div>
+          </div>
+          <div style="display:flex;justify-content:flex-end;margin-top:16px">
+            <button class="btn btn-primary" id="quiz-next-btn" style="display:none">Next Question →</button>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="quiz-step" id="quiz-results" style="display:none">
+          <div class="page-title" id="quiz-score-text">0 / 10 Correct</div>
+          <div class="donut-wrapper">
+            <div style="position:relative;width:160px;height:160px">
+              <svg width="160" height="160" viewBox="0 0 160 160" class="donut-svg" id="donut-svg">
+                <circle cx="80" cy="80" r="70" fill="none" stroke="#E7E5E4" stroke-width="12"/>
+              </svg>
+              <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+                <div id="donut-pct" style="font-family:'Fraunces',serif;font-size:36px;font-weight:700;color:var(--teal-primary)">0%</div>
+              </div>
+            </div>
+          </div>
+          <p id="quiz-pct-text" style="text-align:center;font-size:16px;color:var(--ink-muted);margin-bottom:32px"></p>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+            <button class="btn btn-primary" onclick="resetQuiz()">Try Different Topic</button>
+            <button class="btn btn-ghost" onclick="window.location.hash='results'">View All Results</button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ─────────────────────────────────────────
+           SECTION: SKILL GAP ANALYZER
+      ───────────────────────────────────────── -->
+      <section class="app-section" id="sec-analyzer">
+        <div class="page-title">Skill Gap Analyzer</div>
+        <p class="page-subtitle">See exactly how you match a job description — and what to learn next.</p>
+
+        <!-- Input -->
+        <div id="analyzer-input">
+          <div class="analyzer-panels">
+            <div class="analyzer-panel">
+              <div class="analyzer-panel-title">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Your CV
+              </div>
+              <div id="cv-status-analyzer" style="font-size:14px;color:var(--ink-muted)">Checking CV status...</div>
+            </div>
+            <div class="analyzer-panel">
+              <div class="analyzer-panel-title">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                Job Description
+              </div>
+              <textarea class="form-textarea" id="jd-textarea" placeholder="Paste the full job description here. The more detail, the better the analysis." style="min-height:200px"></textarea>
+              <div style="text-align:right;font-size:12px;color:var(--ink-faint);margin-top:4px" id="jd-char-count">0 chars</div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg" id="analyze-btn" style="width:100%;justify-content:center">
+            Analyze My Skills
+          </button>
+        </div>
+
+        <!-- Loading -->
+        <div id="analyzer-loading" style="display:none">
+          <div style="text-align:center;padding:60px 20px">
+            <div style="width:48px;height:48px;border:3px solid var(--border);border-top-color:var(--teal-primary);border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 20px"></div>
+            <div id="analyzing-msg" style="font-family:'Fraunces',serif;font-size:22px;color:var(--ink);margin-bottom:8px">Extracting skills...</div>
+            <p style="color:var(--ink-muted);font-size:14px">This takes 10–20 seconds for a detailed roadmap.</p>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div id="analyzer-results" style="display:none">
+          <!-- Match Ring -->
+          <div class="match-ring-section">
+            <div class="match-ring-wrap">
+              <svg width="200" height="200" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="85" fill="none" stroke="#E7E5E4" stroke-width="14"/>
+                <circle cx="100" cy="100" r="85" fill="none" stroke="#0D9488" stroke-width="14"
+                  stroke-linecap="round" id="match-ring-circle"
+                  style="stroke-dasharray:534;stroke-dashoffset:534;transform:rotate(-90deg);transform-origin:center"/>
+              </svg>
+              <div class="match-ring-text">
+                <div class="match-pct" id="match-pct-num">0%</div>
+                <div class="match-sublabel" id="match-label">Analyzing...</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills Breakdown -->
+          <div class="skills-breakdown">
+            <div class="skills-col">
+              <div class="skills-col-title">
+                <span style="color:var(--success)">✓</span> Skills you have
+              </div>
+              <div class="skills-tags" id="matched-skills"></div>
+            </div>
+            <div class="skills-col">
+              <div class="skills-col-title">
+                <span style="color:var(--error)">✗</span> Skills you're missing
+              </div>
+              <div class="skills-tags" id="missing-skills"></div>
+            </div>
+          </div>
+
+          <!-- Roadmap -->
+          <div class="roadmap-section">
+            <div class="roadmap-title">Your learning roadmap</div>
+            <div class="accordion" id="roadmap-accordion"></div>
+          </div>
+
+          <button class="btn btn-ghost" id="analyzer-retry-btn">← Analyze a different job</button>
+        </div>
+
+      </section>
+
+      <!-- ─────────────────────────────────────────
+           SECTION: CV UPLOAD
+      ───────────────────────────────────────── -->
+      <section class="app-section" id="sec-cv">
+        <div class="page-title">My CV</div>
+        <p class="page-subtitle">Upload your CV once. We'll extract your skills and use them across all features.</p>
+
+        <!-- Upload state -->
+        <div id="cv-upload-state">
+          <div class="upload-zone" id="upload-zone">
+            <div class="upload-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="56" height="56"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+            </div>
+            <div class="upload-title">Drop your CV here or click to browse</div>
+            <div class="upload-hint">PDF only · Max 5MB</div>
+            <div id="upload-selected-area" style="display:none;justify-content:center;margin-top:12px">
+              <span class="upload-selected">📄 <span id="selected-file-name"></span></span>
+            </div>
+          </div>
+          <input type="file" id="cv-file-input" accept=".pdf" style="display:none"/>
+          <div style="margin-top:20px;display:flex;justify-content:center">
+            <button class="btn btn-primary btn-lg" id="upload-btn" style="display:none">Upload & Analyze CV</button>
+          </div>
+        </div>
+
+        <!-- Profile state -->
+        <div id="cv-profile-state" style="display:none">
+          <div class="cv-profile-card">
+            <div class="cv-status-badge">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              CV uploaded & analysed
+            </div>
+
+            <div class="skills-section">
+              <div class="skills-section-label">Professional summary</div>
+              <div class="cv-summary" id="cv-summary-text"></div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+              <div>
+                <div style="font-size:12px;font-weight:600;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Education</div>
+                <div id="cv-education" style="font-size:14px;color:var(--ink)"></div>
+              </div>
+              <div>
+                <div style="font-size:12px;font-weight:600;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Experience</div>
+                <div id="cv-exp" style="font-size:14px;color:var(--ink)"></div>
+              </div>
+            </div>
+
+            <div class="skills-section">
+              <div class="skills-section-label">Technical skills</div>
+              <div class="skills-tags" id="cv-tech-tags"></div>
+            </div>
+            <div class="skills-section" style="margin-top:16px">
+              <div class="skills-section-label">Soft skills</div>
+              <div class="skills-tags" id="cv-soft-tags"></div>
+            </div>
+
+            <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border)">
+              <a href="#" id="reupload-link" style="font-size:14px;color:var(--teal-primary);font-weight:500">↺ Re-upload CV</a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ─────────────────────────────────────────
+           SECTION: RESULTS HISTORY
+      ───────────────────────────────────────── -->
+      <section class="app-section" id="sec-results">
+        <div class="page-title">Results History</div>
+        <p class="page-subtitle">Every interview session, quiz, and skill analysis you've completed.</p>
+        <div id="results-timeline">
+          <div style="text-align:center;padding:40px;color:var(--ink-faint)">Loading...</div>
+        </div>
+      </section>
+
+    </div><!-- /content-area -->
+  </main>
+</div><!-- /app-layout -->
+
+<script src="app.js"></script>
+</body>
+</html>
