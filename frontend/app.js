@@ -6,7 +6,7 @@
 // In local dev (served from localhost), talk to the local Flask server.
 // Once deployed, replace PRODUCTION_API_URL below with your live Render URL,
 // e.g. "https://hireprep-backend.onrender.com/api"
-const PRODUCTION_API_URL = "https://your-backend.onrender.com/api";
+const PRODUCTION_API_URL = "https://hireprep-website.onrender.com/api";
 const API = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
   ? "http://localhost:5000/api"
   : PRODUCTION_API_URL;
