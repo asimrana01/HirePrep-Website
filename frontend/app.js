@@ -724,7 +724,7 @@ function updateCvStatus() {
   if (hasCV) {
     cvStatus.innerHTML = `<span style="color:var(--success);font-weight:600">✓ CV loaded from your profile</span>`;
   } else {
-    cvStatus.innerHTML = `<span style="color:var(--warning)">⚠ No CV uploaded — <a href="#" onclick="navigate('cv')" style="color:var(--teal-primary);text-decoration:underline">upload your CV first</a></span>`;
+    cvStatus.innerHTML = `<span style="color:var(--warning)">⚠ No CV uploaded — <a href="#" onclick="navigate('cv');return false" style="color:var(--teal-primary);text-decoration:underline">upload your CV first</a></span>`;
   }
 }
 

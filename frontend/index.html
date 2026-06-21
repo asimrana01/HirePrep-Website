@@ -21,9 +21,9 @@
   <div class="navbar-inner">
     <div class="navbar-logo" id="nav-logo">HirePrep</div>
     <ul class="navbar-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#home">Features</a></li>
-      <li><a href="#home">How It Works</a></li>
+      <li><a href="#home" onclick="document.getElementById('page-home').scrollIntoView({behavior:'smooth'});return false">Home</a></li>
+      <li><a href="#features-section" onclick="document.getElementById('features-section').scrollIntoView({behavior:'smooth'});return false">Features</a></li>
+      <li><a href="#how-section" onclick="document.getElementById('how-section').scrollIntoView({behavior:'smooth'});return false">How It Works</a></li>
       <li><a href="#auth">Log in</a></li>
       <li><a href="#auth" class="btn btn-primary btn-sm">Start free</a></li>
     </ul>
@@ -131,7 +131,7 @@
   </section>
 
   <!-- FEATURES ALTERNATING -->
-  <section class="features-section section">
+  <section class="features-section section" id="features-section">
     <div class="container">
       <div class="reveal" style="text-align:center;margin-bottom:16px">
         <div class="section-eyebrow">Features</div>
