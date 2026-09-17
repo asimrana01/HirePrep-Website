@@ -53,10 +53,10 @@ The frontend and backend are deployed independently — the frontend is a static
 
 | Layer | Choice |
 |---|---|
-| Frontend | <!-- FILL: plain HTML/CSS/JS, or a framework? --> |
+| Frontend | HTML,CSS , VANILLA JS |
 | Backend | Flask (Python) |
 | Database | Firestore |
-| LLM | <!-- FILL --> |
+| LLM | GROQ |
 | Hosting | Vercel (frontend), Render (backend) |
 
 ---
