@@ -45,7 +45,7 @@ Flask API (Render)
 
 The frontend and backend are deployed independently — the frontend is a static build on Vercel, the API runs as a Flask service on Render, and the two communicate over a configured API base URL. Firestore holds user records, saved sessions, and quiz results.
 
-<!-- FILL: if the repo is a monorepo, add the folder tree here (frontend/ + backend/) so a reader knows where the API code lives. Right now GitHub reports CSS as the primary language, which hides the backend work. -->
+
 
 ---
 
